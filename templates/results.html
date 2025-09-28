@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recent Tracks for {{ user }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/lastfm.css') }}">
+</head>
+<body>
+    <h1>Recently Listened Tracks for {{ user }}</h1>
+    <ul>
+        {% for track in tracks %}
+            <li class="tweetBox">
+                <img src="{{ track.image_url }}" />
+                <a href="{{ track.url }}">{{ track.artist }} - {{ track.name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="/" class="back-button">Back</a>
+</body>
+</html>
+
